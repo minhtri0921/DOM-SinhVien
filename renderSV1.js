@@ -74,7 +74,7 @@ function add() {
     let newStudent = {
         id: students.length + 1,
         name: newName,
-        classId: giaTri 
+        classId: giaTri
     }
     students.push(newStudent)
     document.getElementById('name').value = ''
@@ -90,7 +90,7 @@ function edit(id) {
     })
     document.getElementById('name').value = editStudent.name
     let e = document.getElementById("class");
-    document.getElementById('class').value = e.options[editStudent.classId ].value
+    document.getElementById('class').value = e.options[editStudent.classId].value
     let upDateBtn = document.getElementById('update')
     let createBtn = document.getElementById('add')
     upDateBtn.style.display = "block"
@@ -103,7 +103,7 @@ function edit(id) {
         editStudent = {
             id: id,
             name: newName,
-            classId: giaTri 
+            classId: giaTri
         }
         console.log(editStudent)
         students[index] = editStudent;
@@ -118,11 +118,11 @@ function edit(id) {
 }
 function remove(id) {
     console.log(id);
-    let confirm =window.confirm("Bạn có muốn xóa ? ")
+    let confirm = window.confirm("Bạn có muốn xóa ? ")
     let index = students.findIndex(function (std) {
         return std.id == id
     })
-    if ( confirm === true ){
+    if (confirm === true) {
         students.splice(index, 1)
     }
     renderSV(students)
